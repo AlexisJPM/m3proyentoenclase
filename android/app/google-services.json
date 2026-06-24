@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "506195907015",
+    "firebase_url": "https://app-dron-a6653-default-rtdb.firebaseio.com",
+    "project_id": "app-dron-a6653",
+    "storage_bucket": "app-dron-a6653.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506195907015:android:c7b5b54ec37fa384af89e2",
+        "android_client_info": {
+          "package_name": "com.example.app12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506195907015-a8rm3tat0g13ulnaqrdq45jhviljsfsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3wM6ZStddH-3wB-Qj4Tvz70F96Ei5qVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506195907015-a8rm3tat0g13ulnaqrdq45jhviljsfsk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "506195907015-7ffjgmivv6fhurocdshmdn8tj582oqm0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app12"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
