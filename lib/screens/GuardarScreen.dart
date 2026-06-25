@@ -1,3 +1,4 @@
+import 'package:app12/main.dart';
 import 'package:flutter/material.dart';
 
 class Guardarscreen extends StatelessWidget {
@@ -35,9 +36,23 @@ Widget formularioG(){
           controller: precio,
         ),
 
-        FilledButton(onPressed: ()=>(), child: Text("Guardar"))
+        FilledButton(
+          onPressed: ()=> guardar(placa, marca, precio),
+          child: Text("Guardar"))
       ],
     )
   );
 
+}
+
+Future<void> guardar(placa, marca, precio) async {
+  await supabase
+    .from('auto')
+    .insert(
+      {
+        'placa': placa.text,
+        'marca': marca.text,
+        'precio': double.parse(precio.text)
+        }
+        );
 }
