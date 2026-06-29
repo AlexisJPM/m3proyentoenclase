@@ -32,10 +32,6 @@ Widget lista (){
 
     }
 
-    if(snapshot.hasError){
-
-    }
-
     if(snapshot.hasData){
 
       final data = snapshot.data!;
@@ -45,7 +41,8 @@ Widget lista (){
         return ListTile(
           title: Text(auto['placa']),
 
-          trailing: IconButton(onPressed: ()=>(), icon: Icon(Icons.delete)),
+          trailing: IconButton(onPressed: ()=> eliminar( context, auto['placa']),
+          icon: Icon(Icons.delete)),
         );
       },);
 
@@ -57,25 +54,21 @@ Widget lista (){
 
 
 
-Future<void> eliminar(placa) async {
+Future<void> eliminar(BuildContext context,placa) async {
 
   showDialog(context: context, builder:(context) => 
   AlertDialog(
     title: Text("Advertencia"),
-    content: Text("Estas por borrar un itrms"),
+    content: Text("Estas por borrar un item"),
     actions: [
       FilledButton(onPressed: ()=>Navigator.pop(context), child: Text("Cancelar")),
-      OutlinedButton(onPressed:() async {
-        await supabase.from('auto').delete().eq('placa', placa);
-        Navigator.pop(context);
-      },
-      child: Text("Borrar"))
+      OutlinedButton(
+        onPressed:() async {await supabase.from('auto').delete().eq('placa', placa);
+        Navigator.pop(context);},
+        child: Text("Borrar"),
+        ),
+      
     ],
   )
   ,);
-await supabase
-  .from('auto')
-  .delete()
-  .eq('placa', placa);
-
 }

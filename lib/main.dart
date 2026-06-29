@@ -27,7 +27,7 @@ class AppSupa extends StatelessWidget {
 
       theme: ThemeData.dark(),
 
-      initialRoute: "/guardar",
+      initialRoute: "/",
       
       routes: {
         "/":(context) => Welcomescreens(),

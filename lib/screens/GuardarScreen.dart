@@ -11,13 +11,13 @@ class Guardarscreen extends StatelessWidget {
       body: Center(
         child: Container(
           width: 350,
-          child: formularioG()),
+          child: formularioG(context)),
       ),
     );
   }
 }
 
-Widget formularioG(){
+Widget formularioG(context){
   TextEditingController placa = TextEditingController();
   TextEditingController marca = TextEditingController();
   TextEditingController precio = TextEditingController();
@@ -38,7 +38,10 @@ Widget formularioG(){
 
         FilledButton(
           onPressed: ()=> guardar(placa, marca, precio),
-          child: Text("Guardar"))
+          child: Text("Guardar")),
+          ElevatedButton(onPressed:() {
+            Navigator.pushNamed(context, "/leer");
+          }, child: Text("Leer"))
       ],
     )
   );
@@ -46,6 +49,7 @@ Widget formularioG(){
 }
 
 Future<void> guardar(placa, marca, precio) async {
+  try{
   await supabase
     .from('auto')
     .insert(
@@ -55,4 +59,8 @@ Future<void> guardar(placa, marca, precio) async {
         'precio': double.parse(precio.text)
         }
         );
+  }catch(e){
+    print(e.toString());
+  }
+        
 }

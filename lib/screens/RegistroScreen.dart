@@ -42,5 +42,7 @@ Future<void> registro(context, correo, contrasenia) async {
   final Session? session = res.session;
   final User? user = res.user;
 
+  print(user);
+
   Navigator.pushNamed(context, "/login");
 }
